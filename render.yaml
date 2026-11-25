@@ -1,0 +1,25 @@
+services:
+  - type: worker            # Background Worker: chạy 24/7, không cần cổng (có phí ~7$/tháng)
+    name: messenger-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    disk:
+      name: bot-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: FB_COOKIES
+        sync: false
+      - key: FB_THREAD_ID
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OWNER_IDS
+        sync: false
+      - key: TZ
+        value: Asia/Ho_Chi_Minh

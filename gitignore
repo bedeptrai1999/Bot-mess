@@ -1,0 +1,10 @@
+cookies.txt
+openai_key.txt
+openai_key.txt.txt
+stats_*.json
+xidach_chips.json
+news_state.json
+tp_history.json
+__pycache__/
+*.pyc
+.env
